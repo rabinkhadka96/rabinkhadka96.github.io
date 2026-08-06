@@ -1,140 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rabin Khadka | Data Science & Business Analytics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f7f9fc;
-      color: #222;
-      line-height: 1.6;
+<title>Rabin Khadka | Data Science & Business Analytics</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #263238;
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+/* Navigation */
+
+nav {
+    background: #ffffff;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #173b57;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #1674a8;
+}
+
+/* Hero Section */
+
+.hero {
+    max-width: 1100px;
+    margin: auto;
+    min-height: 560px;
+    padding: 70px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    margin: 0 0 10px;
+    color: #173b57;
+}
+
+.subtitle {
+    font-size: 21px;
+    color: #3c6e8f;
+    font-weight: 600;
+}
+
+.hero-text p {
+    font-size: 17px;
+    max-width: 650px;
+}
+
+.profile-photo {
+    width: 300px;
+    height: 360px;
+    object-fit: cover;
+    object-position: 50% 25%;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Buttons */
+
+.buttons {
+    margin-top: 28px;
+}
+
+.buttons a {
+    display: inline-block;
+    margin: 5px 8px 5px 0;
+    padding: 10px 18px;
+    border-radius: 5px;
+    background: #173b57;
+    color: white;
+    text-decoration: none;
+}
+
+.buttons a:hover {
+    background: #245b82;
+}
+
+/* Sections */
+
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 55px 30px;
+}
+
+section h2 {
+    font-size: 30px;
+    color: #173b57;
+    border-bottom: 2px solid #e2e8ec;
+    padding-bottom: 8px;
+}
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.interests span {
+    background: #edf4f7;
+    color: #173b57;
+    padding: 9px 14px;
+    border-radius: 20px;
+}
+
+/* Projects */
+
+.project {
+    background: #f8fafb;
+    margin: 20px 0;
+    padding: 23px;
+    border-radius: 8px;
+    border-left: 4px solid #3c789e;
+}
+
+.project h3 {
+    margin-top: 0;
+    color: #173b57;
+}
+
+.project a {
+    color: #176fa1;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background: #173b57;
+    color: white;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: white;
+}
+
+/* Mobile */
+
+@media (max-width: 750px) {
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 40px;
     }
 
-    header {
-      background: #16324f;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    .hero-text h1 {
+        font-size: 40px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-    }
-
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
+    .profile-photo {
+        width: 230px;
+        height: 280px;
     }
 
     nav {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        flex-direction: column;
     }
 
     nav a {
-      color: #16324f;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+        margin: 8px;
     }
+}
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 45px 20px;
-    }
-
-    h2 {
-      color: #16324f;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
-    }
-
-    .project {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .links a {
-      display: inline-block;
-      margin-right: 15px;
-      color: #1769aa;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #16324f;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
-  </style>
+</style>
 </head>
+
 
 <body>
 
-<header>
-  <h1>Rabin Khadka</h1>
-  <p>Data Science | Business Analytics | Supply Chain Decision-Making</p>
-
-  <div class="links">
-    <a href="https://github.com/rabinkhadka96" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/rabinkhadka96" target="_blank">LinkedIn</a>
-  </div>
-</header>
-
 <nav>
-  <a href="#about">About</a>
-  <a href="#research">Research Interests</a>
-  <a href="#projects">Projects</a>
-  <a href="#education">Education</a>
-  <a href="#skills">Skills</a>
+
+<div class="logo">Rabin Khadka</div>
+
+<div>
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+</div>
+
 </nav>
 
-<section id="about">
 
-<h2>About Me</h2>
+<div class="hero">
+
+<div class="hero-text">
+
+<p class="subtitle">
+Data Science • Business Analytics • Supply Chain Decision-Making
+</p>
+
+<h1>Rabin Khadka</h1>
 
 <p>
 I hold a Master of Science in Data Science and a Bachelor of Business
-Administration. My academic interests lie at the intersection of data
-science, business analytics, and data-driven decision-making.
+Administration. My interests lie at the intersection of data science,
+business analytics, and quantitative decision-making.
 </p>
 
 <p>
-I am particularly interested in applying machine learning and
-quantitative methods to complex business and supply chain problems.
+I am particularly interested in applying machine learning, explainable
+AI, and predictive analytics to supply chain and business problems.
 My long-term goal is to pursue doctoral research and contribute to
-research in data-driven business decision-making.
+data-driven decision-making research.
 </p>
 
-</section>
+<div class="buttons">
+
+<a href="https://github.com/rabinkhadka96" target="_blank">
+GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/rabinkhadka96" target="_blank">
+LinkedIn
+</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<img
+src="rabin-khadka.jpeg"
+alt="Rabin Khadka"
+class="profile-photo"
+>
+
+</div>
+
+</div>
+
 
 <section id="research">
 
 <h2>Research Interests</h2>
 
-<ul>
-  <li>Supply Chain Analytics and Decision-Making</li>
-  <li>Demand Forecasting and Inventory Management</li>
-  <li>Machine Learning and Deep Learning</li>
-  <li>Explainable Artificial Intelligence (XAI)</li>
-  <li>Business Analytics and Predictive Modeling</li>
-  <li>Procurement and Supplier Management</li>
-</ul>
+<div class="interests">
+
+<span>Supply Chain Analytics</span>
+<span>Business Analytics</span>
+<span>Machine Learning</span>
+<span>Explainable AI</span>
+<span>Demand Forecasting</span>
+<span>Inventory Management</span>
+<span>Procurement & Supplier Management</span>
+<span>Predictive Modeling</span>
+
+</div>
 
 </section>
+
 
 <section id="projects">
 
@@ -151,7 +309,9 @@ among pricing, discounts, product ratings, and customer reviews.
 </p>
 
 <a href="https://github.com/rabinkhadka96/Amazon-Sales-Sentiment-Analysis"
-target="_blank">View Project on GitHub</a>
+target="_blank">
+View Project on GitHub →
+</a>
 
 </div>
 
@@ -161,9 +321,9 @@ target="_blank">View Project on GitHub</a>
 <h3>Global Life Expectancy Prediction</h3>
 
 <p>
-Applied statistical and machine-learning methods to global health
-indicators to investigate determinants of life expectancy and compare
-predictive performance across multiple models.
+Applied statistical and machine-learning approaches to global health
+indicators to analyze factors associated with life expectancy and
+compare predictive model performance.
 </p>
 
 </div>
@@ -171,11 +331,11 @@ predictive performance across multiple models.
 
 <div class="project">
 
-<h3>Machine Learning Research Project</h3>
+<h3>Additional Machine Learning Research</h3>
 
 <p>
-Additional research project demonstrating predictive modeling,
-statistical analysis, model evaluation, and data-driven decision-making.
+Applied statistical analysis, predictive modeling, model evaluation,
+and machine-learning techniques to real-world datasets.
 </p>
 
 </div>
@@ -188,9 +348,15 @@ statistical analysis, model evaluation, and data-driven decision-making.
 <h2>Education</h2>
 
 <h3>Master of Science in Data Science</h3>
-<p>Carolina University — Winston-Salem, North Carolina</p>
+
+<p>
+Carolina University<br>
+Winston-Salem, North Carolina
+</p>
+
 
 <h3>Bachelor of Business Administration</h3>
+
 <p>
 Texas College of Management & IT<br>
 Affiliated with Lincoln University College, Malaysia
@@ -203,9 +369,7 @@ Affiliated with Lincoln University College, Malaysia
 
 <h2>Technical & Quantitative Skills</h2>
 
-<p>
-<strong>Programming:</strong> Python, R, SQL
-</p>
+<p><strong>Programming:</strong> Python, R, SQL</p>
 
 <p>
 <strong>Data Science:</strong>
@@ -231,9 +395,9 @@ Matplotlib, Seaborn
 <p>© 2026 Rabin Khadka</p>
 
 <p>
-<a href="https://github.com/rabinkhadka96" style="color:white;">GitHub</a>
-|
-<a href="https://www.linkedin.com/in/rabinkhadka96" style="color:white;">LinkedIn</a>
+<a href="https://github.com/rabinkhadka96">GitHub</a>
+&nbsp; | &nbsp;
+<a href="https://www.linkedin.com/in/rabinkhadka96">LinkedIn</a>
 </p>
 
 </footer>

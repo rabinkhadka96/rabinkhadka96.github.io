@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rabin Khadka | Data Science &amp; Supply Chain Analytics</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ---------- Tokens ---------- */
+:root {
+    --paper:      #faf9f6;
+    --paper-dim:  #f1efe9;
+    --ink:        #16232c;
+    --ink-soft:   #4d5b63;
+    --ink-faint:  #8a9299;
+    --line:       #ddd8cc;
+    --teal:       #2d5f61;
+    --teal-dim:   #e8eeee;
+    --gold:       #a9762f;
+
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans:  "Inter", -apple-system, "Segoe UI", sans-serif;
+    --mono:  "IBM Plex Mono", "SFMono-Regular", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink-soft);
+    background: var(--paper);
+    line-height: 1.65;
+    font-size: 16px;
+}
+
+h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 600; }
+
+a { color: var(--teal); }
+
+::selection { background: var(--teal-dim); color: var(--ink); }
+
+/* ---------- Layout shell ---------- */
+
+.shell {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--line);
+}
+
+.sidebar-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 22%;
+    border-radius: 3px;
+    filter: grayscale(15%);
+}
+
+.sidebar h1 {
+    font-size: 24px;
+    margin: 22px 0 4px;
+    line-height: 1.25;
+}
+
+.sidebar .role {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: auto;
+    padding-bottom: 28px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 14px;
+    padding: 7px 0;
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    color: var(--ink);
+    border-bottom-color: var(--teal);
+}
+
+.sidebar-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+}
+
+.sidebar-contact a {
+    text-decoration: none;
+    color: var(--ink-soft);
+}
+
+.sidebar-contact a:hover { color: var(--teal); }
+
+/* ---------- Main content ---------- */
+
+main {
+    flex: 1;
+    min-width: 0;
+    padding: 64px 56px 100px;
+}
+
+.intro p {
+    max-width: 62ch;
+    font-size: 17px;
+}
+
+.intro p + p { margin-top: 16px; }
+
+section { margin-top: 76px; }
+
+section > h2 {
+    font-size: 22px;
+    margin: 0 0 26px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+}
+
+/* Research interest chips */
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 24px;
+}
+
+.interests span {
+    font-size: 13px;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    padding: 6px 13px;
+    border-radius: 3px;
+}
+
+/* Projects */
+
+.project {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.project:first-of-type { padding-top: 0; }
+
+.project h3 {
+    font-size: 19px;
+    margin: 0 0 14px;
+    max-width: 56ch;
+}
+
+.project p { margin: 10px 0; max-width: 62ch; font-size: 15px; }
+
+.project p strong {
+    color: var(--ink);
+    font-weight: 600;
+    font-family: var(--sans);
+}
+
+.project .repo-link {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 14px;
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 3px;
+}
+
+/* Flagship stat callout */
+
+.flagship { position: relative; }
+
+.flagship .badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.stat-row {
+    display: flex;
+    gap: 40px;
+    margin: 20px 0 22px;
+    padding: 20px 24px;
+    background: var(--paper-dim);
+    border-left: 2px solid var(--gold);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat .num {
+    font-family: var(--mono);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.stat .label {
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 4px;
+    max-width: 20ch;
+}
+
+/* Experience / Education entries */
+
+.entry { padding: 22px 0; border-bottom: 1px solid var(--line); }
+.entry:first-of-type { padding-top: 0; }
+.entry:last-of-type { border-bottom: none; }
+
+.entry h3 { font-size: 17px; margin: 0 0 4px; }
+
+.entry .meta {
+    font-size: 13.5px;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+}
+
+.entry ul { margin: 10px 0 0; padding-left: 18px; }
+.entry ul li { margin-bottom: 6px; font-size: 15px; max-width: 60ch; }
+
+.gpa {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--teal);
+}
+
+/* Skills */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    row-gap: 14px;
+    column-gap: 20px;
+    max-width: 62ch;
+    font-size: 15px;
+}
+
+.skills-grid dt {
+    font-family: var(--serif);
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.skills-grid dd { margin: 0; }
+
+/* Footer */
+
+footer {
+    padding: 40px 56px 60px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-faint);
+    display: flex;
+    justify-content: space-between;
+}
+
+footer a { color: var(--ink-faint); }
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 860px) {
+
+    .shell { flex-direction: column; }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        padding: 28px 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .sidebar-photo { width: 84px; aspect-ratio: 1/1; border-radius: 50%; }
+
+    .sidebar h1 { font-size: 19px; margin: 0 0 2px; }
+    .sidebar .role { font-size: 12.5px; margin: 0; }
+
+    .sidebar nav, .sidebar-contact { display: none; }
+
+    main { padding: 40px 24px 70px; }
+
+    .stat-row { flex-wrap: wrap; gap: 24px; }
+
+    footer { flex-direction: column; gap: 10px; padding: 30px 24px 50px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="shell">
+
+<aside class="sidebar">
+
+<img src="rabin-khadka.jpeg" alt="Rabin Khadka" class="sidebar-photo">
+
+<h1>Rabin Khadka</h1>
+<p class="role">Data science &amp; supply&nbsp;chain analytics</p>
+
+<nav>
+<a href="#about">About</a>
+<a href="#research">Research</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+</nav>
+
+<div class="sidebar-contact">
+<a href="https://github.com/rabinkhadka96" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/rabinkhadka96" target="_blank">LinkedIn</a>
+<a href="mailto:rabinkhadka96@gmail.com">rabinkhadka96@gmail.com</a>
+</div>
+
+</aside>
+
+
+<main>
+
+<div id="about" class="intro">
+
+<p>
+I hold a Master of Science in Data Science and a Bachelor of Business
+Administration. My work sits at the intersection of data science,
+business analytics, and quantitative decision-making, with a
+recurring question underneath it: how do shocks and signals move
+through a supply chain, and how can interpretable machine learning
+make that movement legible to the people who have to act on it.
+</p>
+
+<p>
+Recent projects trace that question from macro price transmission
+between producers and consumers down to firm-level demand and risk
+prediction. My long-term goal is to pursue doctoral research that
+develops explainable, data-driven methods for supply chain and
+business decision-making.
+</p>
+
+<div class="interests">
+<span>Supply Chain Analytics</span>
+<span>Business Analytics</span>
+<span>Machine Learning</span>
+<span>Explainable AI</span>
+<span>Demand Forecasting</span>
+<span>Inventory Management</span>
+<span>Procurement &amp; Supplier Management</span>
+<span>Predictive Modeling</span>
+</div>
+
+</div>
+
+
+<section id="research">
+
+<h2>Selected research &amp; analytical projects</h2>
+
+<div class="project flagship">
+
+<div class="badge">WORKING PAPER</div>
+
+<h3>Upstream Price Pressures and Consumer Inflation: Testing Supply Chain Price Transmission in the U.S.</h3>
+
+<p>
+<strong>Research focus.</strong>
+Investigated whether price pressures originating upstream in the
+supply chain — at the producer and import stage — systematically
+lead the prices U.S. consumers pay, connecting classical supply
+chain theory (the bullwhip effect) with macro-empirical evidence
+on inflation.
+</p>
+
+<p>
+<strong>Data &amp; methods.</strong>
+Analyzed U.S. Consumer Price Index, Producer Price Index (Final
+Demand), and Import Price Index data (BLS, Jan 2015–Jul 2026) using
+cross-correlation analysis and pairwise Granger-causality F-tests
+across multiple lag structures, implemented in Python (NumPy/SciPy).
+</p>
+
+<div class="stat-row">
+<div class="stat">
+<span class="num">p = 0.021</span>
+<span class="label">import prices → CPI, 1-month lag</span>
+</div>
+<div class="stat">
+<span class="num">one-way</span>
+<span class="label">CPI never Granger-causes import prices</span>
+</div>
+</div>
+
+<p>
+<strong>Key finding.</strong>
+Import prices Granger-cause CPI changes without CPI ever
+Granger-causing import prices in return — a one-directional
+relationship consistent with import prices acting as a genuinely
+exogenous, upstream supply-chain shock. Producer and consumer
+prices show strong bidirectional causality, reflecting a tightly
+coupled domestic feedback loop.
+</p>
+
+<p><strong>Tools.</strong> Python, NumPy, Pandas, SciPy, Matplotlib</p>
+
+<a class="repo-link" href="https://github.com/rabinkhadka96/supply-chain-price-transmission" target="_blank">View repository</a>
+
+</div>
+
+
+<div class="project">
+
+<h3>Insurance Fraud Detection Using Machine Learning</h3>
+
+<p>
+<strong>Research focus.</strong>
+Investigated the use of machine-learning classification methods to
+identify potentially fraudulent insurance claims and support
+data-driven risk assessment.
+</p>
+
+<p>
+<strong>Data &amp; methods.</strong>
+Performed exploratory data analysis, feature preprocessing,
+class-imbalance handling using SMOTE, and model evaluation across
+multiple classification approaches, including Random Forest,
+Gradient Boosting, Support Vector Machine, and neural-network
+methods.
+</p>
+
+<p>
+<strong>Key insight.</strong>
+Compared model performance and generalization across training,
+validation, and test results while examining the challenges of
+class imbalance and overfitting in fraud detection.
+</p>
+
+<p><strong>Tools.</strong> Python, Pandas, Scikit-learn, SMOTE, TensorFlow/Keras, Matplotlib, Seaborn</p>
+
+</div>
+
+
+<div class="project">
+
+<h3>Amazon Sales &amp; Customer Sentiment Analysis</h3>
+
+<p>
+<strong>Research focus.</strong>
+Examined how product pricing, discounts, ratings, and customer
+sentiment interact within Amazon marketplace data to better
+understand consumer responses and product-level demand patterns.
+</p>
+
+<p>
+<strong>Data &amp; methods.</strong>
+Analyzed 1,465 Amazon products using exploratory data analysis, data
+preprocessing, regression modeling, and natural language processing.
+Customer review text was evaluated using sentiment polarity and
+subjectivity analysis.
+</p>
+
+<p>
+<strong>Key insight.</strong>
+Structured product attributes and unstructured customer-review text
+can be combined to generate data-driven insight for pricing and
+demand decisions.
+</p>
+
+<p><strong>Tools.</strong> Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, TextBlob</p>
+
+<a class="repo-link" href="https://github.com/rabinkhadka96/Amazon-Sales-Sentiment-Analysis" target="_blank">View repository</a>
+
+</div>
+
+
+<div class="project">
+
+<h3>Predicting Global Life Expectancy Using Machine Learning</h3>
+
+<p>
+<strong>Research focus.</strong>
+Investigated how socioeconomic and health indicators are associated
+with life expectancy and evaluated statistical and machine-learning
+approaches for predicting it across countries.
+</p>
+
+<p>
+<strong>Data &amp; methods.</strong>
+Analyzed global health indicators including adult mortality, GDP,
+schooling, alcohol consumption, BMI, HIV/AIDS prevalence, and income
+composition. Compared multiple regression, decision tree, and random
+forest models.
+</p>
+
+<p>
+<strong>Key finding.</strong>
+Random forest produced the strongest predictive performance, with an
+R² of approximately 0.96, outperforming the decision tree and
+regression approaches.
+</p>
+
+<p><strong>Tools.</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn, Statistical Analysis</p>
+
+</div>
+
+</section>
+
+
+<section id="experience">
+
+<h2>Professional &amp; teaching experience</h2>
+
+<div class="entry">
+<h3>Junior Social Media Data Analyst</h3>
+<p class="meta">Kaebox · April 2025–Present</p>
+<ul>
+<li>Analyze social media performance and engagement data to identify trends and support data-driven marketing decisions.</li>
+<li>Monitor key performance indicators and evaluate digital content performance across platforms.</li>
+<li>Translate analytical findings into actionable insight for social media and business objectives.</li>
+</ul>
+</div>
+
+<div class="entry">
+<h3>Business Organization Instructor</h3>
+<p class="meta">Wits Academy, Boudha, Kathmandu, Nepal · 2020–2022</p>
+<ul>
+<li>Taught Business Organization to Grade 11 and 12 students, covering management, organizational structure, business operations, and decision-making.</li>
+<li>Prepared lessons, assessments, and instructional materials to support student understanding of business concepts.</li>
+<li>Guided students in developing analytical thinking and applying business concepts to practical situations.</li>
+</ul>
+</div>
+
+</section>
+
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="entry">
+<h3>Master of Science in Data Science</h3>
+<p class="meta">Carolina University, Winston-Salem, North Carolina, USA &nbsp;·&nbsp; <span class="gpa">GPA 3.83 / 4.00</span></p>
+<p>Graduate training in data science, statistical analysis, machine learning, predictive modeling, and quantitative methods.</p>
+</div>
+
+<div class="entry">
+<h3>Bachelor of Business Administration</h3>
+<p class="meta">Texas College of Management &amp; IT, Kathmandu, Nepal — affiliated with Lincoln University College, Malaysia &nbsp;·&nbsp; <span class="gpa">GPA 3.90 / 4.00</span></p>
+<p>Undergraduate training in business administration, quantitative methods, management, and organizational decision-making.</p>
+</div>
+
+</section>
+
+
+<section id="skills">
+
+<h2>Technical &amp; quantitative skills</h2>
+
+<dl class="skills-grid">
+<dt>Programming</dt>
+<dd>Python, R, SQL</dd>
+
+<dt>Data science</dt>
+<dd>Pandas, NumPy, Scikit-learn, TensorFlow, Keras</dd>
+
+<dt>Methods</dt>
+<dd>Machine learning, predictive modeling, statistical analysis, classification, regression, PCA, model evaluation</dd>
+
+<dt>Visualization</dt>
+<dd>Matplotlib, Seaborn</dd>
+</dl>
+
+</section>
+
+</main>
+
+</div>
+
+<footer>
+<span>© 2026 Rabin Khadka</span>
+<span><a href="https://github.com/rabinkhadka96">GitHub</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/rabinkhadka96">LinkedIn</a></span>
+</footer>
+
+</body>
+</html>

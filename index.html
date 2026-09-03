@@ -524,25 +524,41 @@ demand decisions.
 <strong>Research focus.</strong>
 Investigated how socioeconomic and health indicators are associated
 with life expectancy and evaluated statistical and machine-learning
-approaches for predicting it across countries.
+approaches for predicting it across 193 countries (WHO data, 2000–2015).
 </p>
 
 <p>
 <strong>Data &amp; methods.</strong>
 Analyzed global health indicators including adult mortality, GDP,
 schooling, alcohol consumption, BMI, HIV/AIDS prevalence, and income
-composition. Compared multiple regression, decision tree, and random
-forest models.
+composition. Compared Linear Regression, Decision Tree, and Random
+Forest models on an 80/20 train-test split.
 </p>
+
+<div class="stat-row">
+<div class="stat">
+<span class="num">R² = 0.967</span>
+<span class="label">Random Forest, held-out test set</span>
+</div>
+<div class="stat">
+<span class="num">77%</span>
+<span class="label">of feature importance from HIV/AIDS + income composition</span>
+</div>
+</div>
 
 <p>
 <strong>Key finding.</strong>
-Random forest produced the strongest predictive performance, with an
-R² of approximately 0.96, outperforming the decision tree and
-regression approaches.
+Random Forest produced the strongest predictive performance
+(R² = 0.967, MAE = 1.05 years), outperforming the Decision Tree
+(R² = 0.916) and Linear Regression (R² = 0.820) baselines. HIV/AIDS
+mortality and the Income Composition of Resources index together
+account for roughly 77% of the model's predictive weight — by far
+the two strongest drivers of national life expectancy in this window.
 </p>
 
-<p><strong>Tools.</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn, Statistical Analysis</p>
+<p><strong>Tools.</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn</p>
+
+<a class="repo-link" href="https://github.com/rabinkhadka96/life-expectancy-prediction" target="_blank">View repository</a>
 
 </div>
 

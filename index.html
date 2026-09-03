@@ -356,6 +356,7 @@ footer a { color: var(--ink-faint); }
 <a href="https://github.com/rabinkhadka96" target="_blank">GitHub</a>
 <a href="https://www.linkedin.com/in/rabinkhadka96" target="_blank">LinkedIn</a>
 <a href="mailto:rabinkhadka96@gmail.com">rabinkhadka96@gmail.com</a>
+<a href="Rabin_Khadka_CV.pdf" target="_blank">Download CV</a>
 </div>
 
 </aside>
@@ -453,6 +454,57 @@ coupled domestic feedback loop.
 
 <div class="project">
 
+<h3>Amazon Sales &amp; Customer Sentiment Analysis</h3>
+
+<p>
+<strong>Research focus.</strong>
+Examined how product pricing, discounts, ratings, and customer
+sentiment interact within Amazon marketplace data, then modeled
+discount depth as a function of price, rating, and category to
+test how much of pricing behavior is explainable versus noise.
+</p>
+
+<p>
+<strong>Data &amp; methods.</strong>
+Analyzed 1,465 Amazon products (16 variables) using exploratory
+data analysis and one-hot encoded category features. Customer
+review text was scored with TextBlob and VADER for polarity,
+subjectivity, and sentiment. Compared multiple linear regression
+against Random Forest and a tuned Gradient Boosting model to
+predict discount percentage.
+</p>
+
+<div class="stat-row">
+<div class="stat">
+<span class="num">R² 0.16 → 0.32</span>
+<span class="label">linear baseline vs. tuned ensemble</span>
+</div>
+<div class="stat">
+<span class="num">price + rating</span>
+<span class="label">only statistically significant linear predictors</span>
+</div>
+</div>
+
+<p>
+<strong>Key finding.</strong>
+A tuned Gradient Boosting model raised test R² to 0.32, roughly
+double the linear baseline's 0.16 — evidence that discounting
+behavior on Amazon is meaningfully non-linear across price,
+rating, and category. Even so, most of the variance in discount
+depth remains unexplained by these product attributes alone,
+suggesting discounting is driven substantially by factors outside
+the dataset (seller strategy, inventory, seasonality).
+</p>
+
+<p><strong>Tools.</strong> Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, TextBlob, NLTK (VADER)</p>
+
+<a class="repo-link" href="https://github.com/rabinkhadka96/Amazon-Sales-Sentiment-Analysis" target="_blank">View repository</a>
+
+</div>
+
+
+<div class="project">
+
 <h3>Insurance Fraud Detection Using Machine Learning</h3>
 
 <p>
@@ -479,39 +531,6 @@ class imbalance and overfitting in fraud detection.
 </p>
 
 <p><strong>Tools.</strong> Python, Pandas, Scikit-learn, SMOTE, TensorFlow/Keras, Matplotlib, Seaborn</p>
-
-</div>
-
-
-<div class="project">
-
-<h3>Amazon Sales &amp; Customer Sentiment Analysis</h3>
-
-<p>
-<strong>Research focus.</strong>
-Examined how product pricing, discounts, ratings, and customer
-sentiment interact within Amazon marketplace data to better
-understand consumer responses and product-level demand patterns.
-</p>
-
-<p>
-<strong>Data &amp; methods.</strong>
-Analyzed 1,465 Amazon products using exploratory data analysis, data
-preprocessing, regression modeling, and natural language processing.
-Customer review text was evaluated using sentiment polarity and
-subjectivity analysis.
-</p>
-
-<p>
-<strong>Key insight.</strong>
-Structured product attributes and unstructured customer-review text
-can be combined to generate data-driven insight for pricing and
-demand decisions.
-</p>
-
-<p><strong>Tools.</strong> Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, TextBlob</p>
-
-<a class="repo-link" href="https://github.com/rabinkhadka96/Amazon-Sales-Sentiment-Analysis" target="_blank">View repository</a>
 
 </div>
 

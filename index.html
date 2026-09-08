@@ -11,7 +11,6 @@
 
 <style>
 
-/* ---------- Tokens ---------- */
 :root {
     --paper:      #faf9f6;
     --paper-dim:  #f1efe9;
@@ -41,11 +40,18 @@ body {
     font-size: 16px;
 }
 
-h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 600; }
+h1, h2, h3 {
+    font-family: var(--serif);
+    color: var(--ink);
+    font-weight: 600;
+}
 
 a { color: var(--teal); }
 
-::selection { background: var(--teal-dim); color: var(--ink); }
+::selection {
+    background: var(--teal-dim);
+    color: var(--ink);
+}
 
 /* ---------- Layout shell ---------- */
 
@@ -128,7 +134,9 @@ a { color: var(--teal); }
     color: var(--ink-soft);
 }
 
-.sidebar-contact a:hover { color: var(--teal); }
+.sidebar-contact a:hover {
+    color: var(--teal);
+}
 
 /* ---------- Main content ---------- */
 
@@ -143,9 +151,13 @@ main {
     font-size: 17px;
 }
 
-.intro p + p { margin-top: 16px; }
+.intro p + p {
+    margin-top: 16px;
+}
 
-section { margin-top: 76px; }
+section {
+    margin-top: 76px;
+}
 
 section > h2 {
     font-size: 22px;
@@ -178,7 +190,9 @@ section > h2 {
     border-bottom: 1px solid var(--line);
 }
 
-.project:first-of-type { padding-top: 0; }
+.project:first-of-type {
+    padding-top: 0;
+}
 
 .project h3 {
     font-size: 19px;
@@ -186,7 +200,11 @@ section > h2 {
     max-width: 56ch;
 }
 
-.project p { margin: 10px 0; max-width: 62ch; font-size: 15px; }
+.project p {
+    margin: 10px 0;
+    max-width: 62ch;
+    font-size: 15px;
+}
 
 .project p strong {
     color: var(--ink);
@@ -205,7 +223,9 @@ section > h2 {
 
 /* Flagship stat callout */
 
-.flagship { position: relative; }
+.flagship {
+    position: relative;
+}
 
 .flagship .badge {
     font-family: var(--mono);
@@ -245,11 +265,23 @@ section > h2 {
 
 /* Experience / Education entries */
 
-.entry { padding: 22px 0; border-bottom: 1px solid var(--line); }
-.entry:first-of-type { padding-top: 0; }
-.entry:last-of-type { border-bottom: none; }
+.entry {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+}
 
-.entry h3 { font-size: 17px; margin: 0 0 4px; }
+.entry:first-of-type {
+    padding-top: 0;
+}
+
+.entry:last-of-type {
+    border-bottom: none;
+}
+
+.entry h3 {
+    font-size: 17px;
+    margin: 0 0 4px;
+}
 
 .entry .meta {
     font-size: 13.5px;
@@ -257,8 +289,16 @@ section > h2 {
     margin-bottom: 10px;
 }
 
-.entry ul { margin: 10px 0 0; padding-left: 18px; }
-.entry ul li { margin-bottom: 6px; font-size: 15px; max-width: 60ch; }
+.entry ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+}
+
+.entry ul li {
+    margin-bottom: 6px;
+    font-size: 15px;
+    max-width: 60ch;
+}
 
 .gpa {
     font-family: var(--mono);
@@ -283,7 +323,9 @@ section > h2 {
     font-weight: 600;
 }
 
-.skills-grid dd { margin: 0; }
+.skills-grid dd {
+    margin: 0;
+}
 
 /* Footer */
 
@@ -296,13 +338,17 @@ footer {
     justify-content: space-between;
 }
 
-footer a { color: var(--ink-faint); }
+footer a {
+    color: var(--ink-faint);
+}
 
 /* ---------- Mobile ---------- */
 
 @media (max-width: 860px) {
 
-    .shell { flex-direction: column; }
+    .shell {
+        flex-direction: column;
+    }
 
     .sidebar {
         position: relative;
@@ -316,18 +362,41 @@ footer a { color: var(--ink-faint); }
         border-bottom: 1px solid var(--line);
     }
 
-    .sidebar-photo { width: 84px; aspect-ratio: 1/1; border-radius: 50%; }
+    .sidebar-photo {
+        width: 84px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+    }
 
-    .sidebar h1 { font-size: 19px; margin: 0 0 2px; }
-    .sidebar .role { font-size: 12.5px; margin: 0; }
+    .sidebar h1 {
+        font-size: 19px;
+        margin: 0 0 2px;
+    }
 
-    .sidebar nav, .sidebar-contact { display: none; }
+    .sidebar .role {
+        font-size: 12.5px;
+        margin: 0;
+    }
 
-    main { padding: 40px 24px 70px; }
+    .sidebar nav,
+    .sidebar-contact {
+        display: none;
+    }
 
-    .stat-row { flex-wrap: wrap; gap: 24px; }
+    main {
+        padding: 40px 24px 70px;
+    }
 
-    footer { flex-direction: column; gap: 10px; padding: 30px 24px 50px; }
+    .stat-row {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 30px 24px 50px;
+    }
 }
 
 </style>
@@ -401,11 +470,52 @@ business decision-making.
 
 <h2>Selected research &amp; analytical projects</h2>
 
+
+<!-- SUBMITTED MANUSCRIPT -->
+
+<div class="project flagship">
+
+<div class="badge">MANUSCRIPT UNDER REVIEW</div>
+
+<h3>
+Explainable Artificial Intelligence in Demand Forecasting:
+From Model Explanation to Managerial Decision Support
+</h3>
+
+<p>
+<strong>Research focus.</strong>
+This focused review examines how explainable artificial intelligence
+can support demand and sales forecasting, with particular attention
+to how explanations may help managers and demand planners understand
+machine-learning forecasts and use them in decision-making.
+</p>
+
+<p>
+<strong>Key insight.</strong>
+The reviewed literature shows substantial progress in explaining
+machine-learning forecasts, but fewer studies directly examine whether
+those explanations help people make better downstream operational
+decisions such as inventory, purchasing, and replenishment decisions.
+</p>
+
+<p>
+<strong>Status.</strong>
+Manuscript submitted to <em>Journal of Decision Systems</em>, 2026.
+</p>
+
+</div>
+
+
+<!-- PRICE TRANSMISSION WORKING PAPER -->
+
 <div class="project flagship">
 
 <div class="badge">WORKING PAPER</div>
 
-<h3>Upstream Price Pressures and Consumer Inflation: Testing Supply Chain Price Transmission in the U.S.</h3>
+<h3>
+Upstream Price Pressures and Consumer Inflation:
+Testing Supply Chain Price Transmission in the U.S.
+</h3>
 
 <p>
 <strong>Research focus.</strong>
@@ -425,14 +535,17 @@ across multiple lag structures, implemented in Python (NumPy/SciPy).
 </p>
 
 <div class="stat-row">
+
 <div class="stat">
 <span class="num">p = 0.021</span>
 <span class="label">import prices → CPI, 1-month lag</span>
 </div>
+
 <div class="stat">
 <span class="num">one-way</span>
 <span class="label">CPI never Granger-causes import prices</span>
 </div>
+
 </div>
 
 <p>
@@ -445,12 +558,21 @@ prices show strong bidirectional causality, reflecting a tightly
 coupled domestic feedback loop.
 </p>
 
-<p><strong>Tools.</strong> Python, NumPy, Pandas, SciPy, Matplotlib</p>
+<p>
+<strong>Tools.</strong>
+Python, NumPy, Pandas, SciPy, Matplotlib
+</p>
 
-<a class="repo-link" href="https://github.com/rabinkhadka96/supply-chain-price-transmission" target="_blank">View repository</a>
+<a class="repo-link"
+href="https://github.com/rabinkhadka96/supply-chain-price-transmission"
+target="_blank">
+View repository
+</a>
 
 </div>
 
+
+<!-- AMAZON PROJECT -->
 
 <div class="project">
 
@@ -475,14 +597,17 @@ predict discount percentage.
 </p>
 
 <div class="stat-row">
+
 <div class="stat">
 <span class="num">R² 0.16 → 0.32</span>
 <span class="label">linear baseline vs. tuned ensemble</span>
 </div>
+
 <div class="stat">
 <span class="num">price + rating</span>
 <span class="label">only statistically significant linear predictors</span>
 </div>
+
 </div>
 
 <p>
@@ -496,12 +621,22 @@ suggesting discounting is driven substantially by factors outside
 the dataset (seller strategy, inventory, seasonality).
 </p>
 
-<p><strong>Tools.</strong> Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, TextBlob, NLTK (VADER)</p>
+<p>
+<strong>Tools.</strong>
+Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn,
+TextBlob, NLTK (VADER)
+</p>
 
-<a class="repo-link" href="https://github.com/rabinkhadka96/Amazon-Sales-Sentiment-Analysis" target="_blank">View repository</a>
+<a class="repo-link"
+href="https://github.com/rabinkhadka96/Amazon-Sales-Sentiment-Analysis"
+target="_blank">
+View repository
+</a>
 
 </div>
 
+
+<!-- INSURANCE FRAUD PROJECT -->
 
 <div class="project">
 
@@ -530,10 +665,16 @@ validation, and test results while examining the challenges of
 class imbalance and overfitting in fraud detection.
 </p>
 
-<p><strong>Tools.</strong> Python, Pandas, Scikit-learn, SMOTE, TensorFlow/Keras, Matplotlib, Seaborn</p>
+<p>
+<strong>Tools.</strong>
+Python, Pandas, Scikit-learn, SMOTE, TensorFlow/Keras,
+Matplotlib, Seaborn
+</p>
 
 </div>
 
+
+<!-- LIFE EXPECTANCY PROJECT -->
 
 <div class="project">
 
@@ -555,14 +696,19 @@ Forest models on an 80/20 train-test split.
 </p>
 
 <div class="stat-row">
+
 <div class="stat">
 <span class="num">R² = 0.967</span>
 <span class="label">Random Forest, held-out test set</span>
 </div>
+
 <div class="stat">
 <span class="num">77%</span>
-<span class="label">of feature importance from HIV/AIDS + income composition</span>
+<span class="label">
+of feature importance from HIV/AIDS + income composition
+</span>
 </div>
+
 </div>
 
 <p>
@@ -575,66 +721,139 @@ account for roughly 77% of the model's predictive weight — by far
 the two strongest drivers of national life expectancy in this window.
 </p>
 
-<p><strong>Tools.</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn</p>
+<p>
+<strong>Tools.</strong>
+Python, Pandas, Scikit-learn, Matplotlib, Seaborn
+</p>
 
-<a class="repo-link" href="https://github.com/rabinkhadka96/life-expectancy-prediction" target="_blank">View repository</a>
+<a class="repo-link"
+href="https://github.com/rabinkhadka96/life-expectancy-prediction"
+target="_blank">
+View repository
+</a>
 
 </div>
 
 </section>
 
+
+<!-- EXPERIENCE -->
 
 <section id="experience">
 
 <h2>Professional &amp; teaching experience</h2>
 
 <div class="entry">
+
 <h3>Junior Social Media Data Analyst</h3>
 <p class="meta">Kaebox · April 2025–Present</p>
+
 <ul>
-<li>Analyze social media performance and engagement data to identify trends and support data-driven marketing decisions.</li>
-<li>Monitor key performance indicators and evaluate digital content performance across platforms.</li>
-<li>Translate analytical findings into actionable insight for social media and business objectives.</li>
+<li>
+Analyze social media performance and engagement data to identify
+trends and support data-driven marketing decisions.
+</li>
+
+<li>
+Monitor key performance indicators and evaluate digital content
+performance across platforms.
+</li>
+
+<li>
+Translate analytical findings into actionable insight for social
+media and business objectives.
+</li>
 </ul>
+
 </div>
 
+
 <div class="entry">
+
 <h3>Business Organization Instructor</h3>
-<p class="meta">Wits Academy, Boudha, Kathmandu, Nepal · 2020–2022</p>
+
+<p class="meta">
+Wits Academy, Boudha, Kathmandu, Nepal · 2020–2022
+</p>
+
 <ul>
-<li>Taught Business Organization to Grade 11 and 12 students, covering management, organizational structure, business operations, and decision-making.</li>
-<li>Prepared lessons, assessments, and instructional materials to support student understanding of business concepts.</li>
-<li>Guided students in developing analytical thinking and applying business concepts to practical situations.</li>
+
+<li>
+Taught Business Organization to Grade 11 and 12 students, covering
+management, organizational structure, business operations, and
+decision-making.
+</li>
+
+<li>
+Prepared lessons, assessments, and instructional materials to
+support student understanding of business concepts.
+</li>
+
+<li>
+Guided students in developing analytical thinking and applying
+business concepts to practical situations.
+</li>
+
 </ul>
+
 </div>
 
 </section>
 
+
+<!-- EDUCATION -->
 
 <section id="education">
 
 <h2>Education</h2>
 
 <div class="entry">
+
 <h3>Master of Science in Data Science</h3>
-<p class="meta">Carolina University, Winston-Salem, North Carolina, USA &nbsp;·&nbsp; <span class="gpa">GPA 3.83 / 4.00</span></p>
-<p>Graduate training in data science, statistical analysis, machine learning, predictive modeling, and quantitative methods.</p>
+
+<p class="meta">
+Carolina University, Winston-Salem, North Carolina, USA
+&nbsp;·&nbsp;
+<span class="gpa">GPA 3.83 / 4.00</span>
+</p>
+
+<p>
+Graduate training in data science, statistical analysis,
+machine learning, predictive modeling, and quantitative methods.
+</p>
+
 </div>
 
+
 <div class="entry">
+
 <h3>Bachelor of Business Administration</h3>
-<p class="meta">Texas College of Management &amp; IT, Kathmandu, Nepal — affiliated with Lincoln University College, Malaysia &nbsp;·&nbsp; <span class="gpa">GPA 3.90 / 4.00</span></p>
-<p>Undergraduate training in business administration, quantitative methods, management, and organizational decision-making.</p>
+
+<p class="meta">
+Texas College of Management &amp; IT, Kathmandu, Nepal —
+affiliated with Lincoln University College, Malaysia
+&nbsp;·&nbsp;
+<span class="gpa">GPA 3.90 / 4.00</span>
+</p>
+
+<p>
+Undergraduate training in business administration, quantitative
+methods, management, and organizational decision-making.
+</p>
+
 </div>
 
 </section>
 
+
+<!-- SKILLS -->
 
 <section id="skills">
 
 <h2>Technical &amp; quantitative skills</h2>
 
 <dl class="skills-grid">
+
 <dt>Programming</dt>
 <dd>Python, R, SQL</dd>
 
@@ -642,10 +861,14 @@ the two strongest drivers of national life expectancy in this window.
 <dd>Pandas, NumPy, Scikit-learn, TensorFlow, Keras</dd>
 
 <dt>Methods</dt>
-<dd>Machine learning, predictive modeling, statistical analysis, classification, regression, PCA, model evaluation</dd>
+<dd>
+Machine learning, predictive modeling, statistical analysis,
+classification, regression, PCA, model evaluation
+</dd>
 
 <dt>Visualization</dt>
 <dd>Matplotlib, Seaborn</dd>
+
 </dl>
 
 </section>
@@ -654,9 +877,17 @@ the two strongest drivers of national life expectancy in this window.
 
 </div>
 
+
 <footer>
+
 <span>© 2026 Rabin Khadka</span>
-<span><a href="https://github.com/rabinkhadka96">GitHub</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/rabinkhadka96">LinkedIn</a></span>
+
+<span>
+<a href="https://github.com/rabinkhadka96">GitHub</a>
+&nbsp;·&nbsp;
+<a href="https://www.linkedin.com/in/rabinkhadka96">LinkedIn</a>
+</span>
+
 </footer>
 
 </body>

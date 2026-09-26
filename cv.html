@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rabin Khadka — CV</title>
+<style>
+:root{--bg:#0a0e14;--fg:#c9d1d9;--dim:#6e7681;--prompt:#7ee787;--accent:#f2cc60;--rule:#1c232c;--pill:#161b22;}
+*{box-sizing:border-box;}
+html,body{margin:0;background:var(--bg);color:var(--fg);}
+body{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;line-height:1.6;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+a{color:var(--prompt);text-decoration:none;border-bottom:1px solid rgba(126,231,135,.35);}
+a:hover{border-bottom-color:var(--prompt);}
+.termbar{display:flex;align-items:center;gap:.4rem;padding:.9rem 1.25rem;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;background:var(--bg);z-index:5;}
+.dot{width:10px;height:10px;border-radius:50%;}
+.dot.r{background:#ff5f56;}.dot.y{background:#ffbd2e;}.dot.g{background:#27c93f;}
+.termbar span{margin-left:.6rem;color:var(--dim);font-size:.85rem;}
+.termbar nav{margin-left:auto;display:flex;gap:1.1rem;font-size:.85rem;}
+.termbar nav a{border-bottom:none;color:var(--dim);}
+.termbar nav a.on,.termbar nav a:hover{color:var(--prompt);}
+
+.layout{max-width:920px;margin:0 auto;padding:2.2rem 1.25rem 4rem;display:grid;grid-template-columns:230px 1fr;gap:2.4rem;}
+@media (max-width:700px){.layout{grid-template-columns:1fr;}}
+
+.side{text-align:left;}
+.avatar{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--rule);display:block;}
+.side h1{font-size:1.4rem;color:#fff;margin:1rem 0 0;font-weight:700;line-height:1.25;}
+.side .role{color:var(--accent);font-weight:600;font-size:.88rem;margin:.4rem 0 1.1rem;}
+.pill{display:flex;align-items:center;gap:.5rem;width:100%;padding:.55rem .8rem;margin-bottom:.5rem;
+  border:1px solid var(--rule);border-radius:6px;background:var(--pill);color:var(--fg);font-size:.83rem;}
+.pill:hover{border-color:var(--prompt);}
+a.pill{border-bottom:none;}
+
+main{min-width:0;}
+.cmd{color:var(--dim);font-size:.85rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule);margin-bottom:1.4rem;}
+.cmd .p{color:var(--prompt);}
+section{margin-top:2.2rem;}
+
+.entry{margin-bottom:1.7rem;padding-left:1.1rem;border-left:2px solid var(--rule);position:relative;}
+.entry::before{content:"●";color:var(--prompt);font-size:.6rem;position:absolute;left:-.34rem;top:.4rem;}
+.entry .tag{color:var(--accent);font-size:.82rem;}
+.entry h3{margin:.35rem 0 0;font-size:1.02rem;color:#fff;font-weight:600;}
+.entry .meta{color:var(--dim);font-size:.82rem;margin:.15rem 0 .7rem;}
+.entry p{margin:.5rem 0;font-size:.92rem;}
+.entry p b{color:var(--accent);font-weight:600;}
+.entry ul{margin:.5rem 0;padding-left:1.1rem;}
+.entry li{margin:.3rem 0;font-size:.92rem;}
+.stat{color:var(--prompt);font-weight:600;}
+.repo{font-size:.85rem;display:inline-block;margin-top:.3rem;}
+
+.edu-item{margin-bottom:1.1rem;}
+.edu-item h3{margin:0;font-size:.98rem;color:#fff;}
+.edu-item .meta{color:var(--dim);font-size:.82rem;margin:.15rem 0 .4rem;}
+.edu-item p{margin:0;font-size:.88rem;}
+
+.skillgrid{display:grid;grid-template-columns:120px 1fr;gap:.6rem 1rem;font-size:.9rem;}
+.skillgrid .k{color:var(--dim);}
+@media (max-width:500px){.skillgrid{grid-template-columns:1fr;}}
+
+footer{max-width:920px;margin:0 auto;padding:0 1.25rem 3rem;color:var(--dim);font-size:.8rem;}
+</style>
+</head>
+<body>
+
+<div class="termbar">
+  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span>rabin@portfolio: ~</span>
+  <nav><a href="index.html">Home</a><a href="cv.html" class="on">CV</a></nav>
+</div>
+
+<div class="layout">
+  <aside class="side">
+    <img class="avatar" src="rabin-khadka.jpeg" alt="Rabin Khadka">
+    <h1>Rabin Khadka</h1>
+    <div class="role">Data Science &amp; Supply Chain Analytics</div>
+    <div class="pill">📍 Winston-Salem, NC</div>
+    <a class="pill" href="mailto:khadkarabin883@gmail.com">✉️ Email</a>
+    <a class="pill" href="https://www.linkedin.com/in/rabinkhadka96">🔗 LinkedIn</a>
+    <a class="pill" href="https://github.com/rabinkhadka96">🐙 GitHub</a>
+    <a class="pill" href="Rabin_Khadka_Academic_CV.pdf">⬇️ Download PDF</a>
+  </aside>
+
+  <main>
+    <section>
+      <div class="cmd"><span class="p">$</span> git log --author=rabin --grep="research" --reverse</div>
+
+      <div class="entry">
+        <div class="tag">status: manuscript under review</div>
+        <h3>Explainable Artificial Intelligence in Demand Forecasting: From Model Explanation to Managerial Decision Support</h3>
+        <div class="meta">Journal of Decision Systems, submitted 2026</div>
+        <p>A focused review of how explainable AI can support demand and sales forecasting, with attention to whether explanations help managers and demand planners actually use machine-learning forecasts in decisions.</p>
+        <p><b>Key insight —</b> the literature shows strong progress explaining ML forecasts, but few studies test whether those explanations improve downstream decisions like inventory, purchasing, and replenishment.</p>
+      </div>
+
+      <div class="entry">
+        <div class="tag">status: working paper</div>
+        <h3>Upstream Price Pressures and Consumer Inflation: Testing Supply Chain Price Transmission in the U.S.</h3>
+        <div class="meta">Python · NumPy · SciPy</div>
+        <p>Tested whether upstream price pressures — at the producer and import stage — systematically lead U.S. consumer prices, linking the bullwhip effect to macro-empirical inflation evidence. Analyzed CPI, PPI (Final Demand), and Import Price Index data (BLS, Jan 2015–Jul 2026) using cross-correlation and pairwise Granger-causality F-tests.</p>
+        <p><span class="stat">p = 0.021</span> import prices → CPI, 1-month lag · one-way, CPI never Granger-causes import prices</p>
+        <p><b>Finding —</b> import prices Granger-cause CPI without reverse causality; producer and consumer prices show strong bidirectional causality.</p>
+        <a class="repo" href="https://github.com/rabinkhadka96/supply-chain-price-transmission">→ view repository</a>
+      </div>
+
+      <div class="entry">
+        <div class="tag">status: project</div>
+        <h3>Amazon Sales &amp; Customer Sentiment Analysis</h3>
+        <div class="meta">Python · Pandas · Scikit-learn · TextBlob · NLTK (VADER)</div>
+        <p>Modeled discount depth as a function of price, rating, and category across 1,465 Amazon products, scoring review sentiment and comparing linear regression against Random Forest and tuned Gradient Boosting.</p>
+        <p><span class="stat">R² 0.16 → 0.32</span> linear baseline vs. tuned ensemble</p>
+        <a class="repo" href="https://github.com/rabinkhadka96/Amazon-Sales-Sentiment-Analysis">→ view repository</a>
+      </div>
+
+      <div class="entry">
+        <div class="tag">status: project</div>
+        <h3>Insurance Fraud Detection Using Machine Learning</h3>
+        <div class="meta">Python · Scikit-learn · SMOTE · TensorFlow/Keras</div>
+        <p>Investigated ML classification for identifying potentially fraudulent insurance claims, handling class imbalance with SMOTE and comparing Random Forest, Gradient Boosting, SVM, and neural-network approaches.</p>
+      </div>
+
+      <div class="entry">
+        <div class="tag">status: project</div>
+        <h3>Predicting Global Life Expectancy Using Machine Learning</h3>
+        <div class="meta">Python · Scikit-learn · Matplotlib/Seaborn</div>
+        <p>Modeled life expectancy across 193 countries (WHO, 2000–2015), comparing Linear Regression, Decision Tree, and Random Forest on an 80/20 split.</p>
+        <p><span class="stat">R² = 0.967</span> Random Forest, held-out test · <span class="stat">77%</span> importance from HIV/AIDS + income composition</p>
+        <a class="repo" href="https://github.com/rabinkhadka96/life-expectancy-prediction">→ view repository</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="cmd"><span class="p">$</span> cat experience.log</div>
+      <div class="entry">
+        <div class="tag">Junior Social Media Data Analyst · Kaebox</div>
+        <div class="meta">April 2025 – Present</div>
+        <ul>
+          <li>Analyze social media performance and engagement data to identify trends and support data-driven marketing decisions.</li>
+          <li>Monitor key performance indicators and evaluate digital content performance across platforms.</li>
+          <li>Translate analytical findings into actionable insight for social media and business objectives.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="tag">Business Organization Instructor · Wits Academy, Boudha, Kathmandu</div>
+        <div class="meta">2020 – 2022</div>
+        <ul>
+          <li>Taught Business Organization to Grade 11 and 12 students, covering management, organizational structure, and decision-making.</li>
+          <li>Prepared lessons, assessments, and instructional materials to support student understanding.</li>
+          <li>Guided students in developing analytical thinking and applying business concepts to practical situations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="cmd"><span class="p">$</span> cat education.log</div>
+      <div class="edu-item">
+        <h3>Master of Science in Data Science</h3>
+        <div class="meta">Carolina University, Winston-Salem, North Carolina, USA · GPA 3.83 / 4.00</div>
+        <p>Graduate training in data science, statistical analysis, machine learning, predictive modeling, and quantitative methods.</p>
+      </div>
+      <div class="edu-item">
+        <h3>Bachelor of Business Administration</h3>
+        <div class="meta">Texas College of Management &amp; IT, Kathmandu, Nepal — affiliated with Lincoln University College, Malaysia · GPA 3.90 / 4.00</div>
+        <p>Undergraduate training in business administration, quantitative methods, management, and organizational decision-making.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cmd"><span class="p">$</span> cat skills.txt</div>
+      <div class="skillgrid">
+        <div class="k">Programming</div><div>Python, R, SQL</div>
+        <div class="k">Data science</div><div>Pandas, NumPy, Scikit-learn, TensorFlow, Keras</div>
+        <div class="k">Methods</div><div>Machine learning, predictive modeling, statistical analysis, classification, regression, PCA, model evaluation</div>
+        <div class="k">Visualization</div><div>Matplotlib, Seaborn</div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>© 2026 Rabin Khadka</footer>
+</body>
+</html>

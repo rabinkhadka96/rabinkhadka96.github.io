@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rabin Khadka</title>
+<style>
+:root{--bg:#0a0e14;--fg:#c9d1d9;--dim:#6e7681;--prompt:#7ee787;--accent:#f2cc60;--rule:#1c232c;--pill:#161b22;}
+*{box-sizing:border-box;}
+html,body{margin:0;background:var(--bg);color:var(--fg);}
+body{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;line-height:1.6;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);}
+a{color:var(--prompt);text-decoration:none;border-bottom:1px solid rgba(126,231,135,.35);}
+a:hover{border-bottom-color:var(--prompt);}
+.termbar{display:flex;align-items:center;gap:.4rem;padding:.9rem 1.25rem;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;background:var(--bg);z-index:5;}
+.dot{width:10px;height:10px;border-radius:50%;}
+.dot.r{background:#ff5f56;}.dot.y{background:#ffbd2e;}.dot.g{background:#27c93f;}
+.termbar span{margin-left:.6rem;color:var(--dim);font-size:.85rem;}
+.termbar nav{margin-left:auto;display:flex;gap:1.1rem;font-size:.85rem;}
+.termbar nav a{border-bottom:none;color:var(--dim);}
+.termbar nav a.on,.termbar nav a:hover{color:var(--prompt);}
+
+.layout{max-width:920px;margin:0 auto;padding:2.2rem 1.25rem 4rem;display:grid;grid-template-columns:230px 1fr;gap:2.4rem;}
+@media (max-width:700px){.layout{grid-template-columns:1fr;}}
+
+.side{text-align:left;}
+.avatar{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--rule);display:block;}
+.side h1{font-size:1.4rem;color:#fff;margin:1rem 0 0;font-weight:700;line-height:1.25;}
+.side .role{color:var(--accent);font-weight:600;font-size:.88rem;margin:.4rem 0 1.1rem;}
+.pill{display:flex;align-items:center;gap:.5rem;width:100%;padding:.55rem .8rem;margin-bottom:.5rem;
+  border:1px solid var(--rule);border-radius:6px;background:var(--pill);color:var(--fg);font-size:.83rem;}
+.pill:hover{border-color:var(--prompt);}
+a.pill{border-bottom:none;}
+
+main{min-width:0;}
+.prompt{color:var(--dim);font-size:.85rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule);margin:0 0 1.1rem;}
+.prompt .p{color:var(--prompt);}
+main h2{color:var(--dim);font-size:.85rem;font-weight:400;margin:2.2rem 0 .9rem;}
+main p{margin:0 0 1rem;font-size:.95rem;max-width:66ch;}
+main a{color:var(--prompt);}
+.tools{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0 0;}
+.tools span{border:1px solid var(--rule);color:var(--accent);padding:.15rem .55rem;font-size:.78rem;border-radius:3px;}
+
+footer{max-width:920px;margin:0 auto;padding:0 1.25rem 3rem;color:var(--dim);font-size:.8rem;}
+</style>
+</head>
+<body>
+
+<div class="termbar">
+  <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div><span>rabin@portfolio: ~</span>
+  <nav><a href="index.html" class="on">Home</a><a href="cv.html">CV</a></nav>
+</div>
+
+<div class="layout">
+  <aside class="side">
+    <img class="avatar" src="rabin-khadka.jpeg" alt="Rabin Khadka">
+    <h1>Rabin Khadka</h1>
+    <div class="role">Data Science &amp; Supply Chain Analytics</div>
+    <div class="pill">📍 Winston-Salem, NC</div>
+    <a class="pill" href="mailto:khadkarabin883@gmail.com">✉️ Email</a>
+    <a class="pill" href="https://www.linkedin.com/in/rabinkhadka96">🔗 LinkedIn</a>
+    <a class="pill" href="https://github.com/rabinkhadka96">🐙 GitHub</a>
+  </aside>
+
+  <main>
+    <div class="prompt"><span class="p">$</span> whoami</div>
+
+    <h2>about</h2>
+    <p>I'm Rabin, a data scientist working at the intersection of data science, business analytics, and quantitative decision-making. The question underneath most of what I do: how do shocks and signals move through a supply chain, and how can interpretable machine learning make that movement legible to the people who have to act on it.</p>
+    <p>My recent work traces that question from macro price transmission between producers and consumers down to firm-level demand and risk prediction — most recently a working paper testing whether upstream price pressures Granger-cause U.S. consumer inflation. My long-term goal is doctoral research developing explainable, data-driven methods for supply chain and business decision-making.</p>
+    <p>I currently work as a Junior Social Media Data Analyst at Kaebox, analyzing engagement data and translating findings into decisions, alongside my graduate work in data science at Carolina University.</p>
+
+    <h2>ls -la ~/toolbox</h2>
+    <div class="tools">
+      <span>Python</span><span>R</span><span>SQL</span><span>Pandas</span><span>NumPy</span>
+      <span>Scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>Matplotlib</span><span>Seaborn</span>
+    </div>
+
+    <h2>connect</h2>
+    <p>Find my full background on the <a href="cv.html">CV</a> page, or reach out on <a href="https://github.com/rabinkhadka96">GitHub</a> or <a href="https://www.linkedin.com/in/rabinkhadka96">LinkedIn</a>.</p>
+  </main>
+</div>
+
+<footer>© 2026 Rabin Khadka</footer>
+</body>
+</html>

@@ -299,6 +299,59 @@ html:not(.js) .stackbar .seg{width:var(--w);}
 #page-home .hero .btn:not(.primary){background:rgba(8,26,43,.50);border-color:rgba(255,255,255,.55);color:#fff}
 #page-home .hero .btn:not(.primary):hover{background:rgba(8,26,43,.72)}
 @media(max-width:600px){#page-home .hero{background-position:60% center;background-image:linear-gradient(90deg,rgba(8,26,43,.89),rgba(8,26,43,.63)),url("himalayan-background.jpg")}}
+
+/* ==========================================
+   FULL-SCREEN FIXED HIMALAYAN BACKGROUND
+   ========================================== */
+
+/* Fixed background across the entire website */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  background:
+    linear-gradient(
+      rgba(5, 15, 28, 0.60),
+      rgba(5, 15, 28, 0.72)
+    ),
+    url("himalayan-background.jpg")
+    center center / cover no-repeat;
+
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Make the main sections transparent */
+html,
+body,
+main,
+.page,
+.hero,
+.sec {
+  background-color: transparent !important;
+}
+
+/* Remove the old hero-only background */
+.hero {
+  background-image: none !important;
+}
+
+/* Preserve the appearance of project cards */
+.pc {
+  background: var(--card);
+}
+
+/* Mobile positioning */
+@media (max-width: 768px) {
+  body::before {
+    background-position: 58% center;
+  }
+}
+
 </style>
 <noscript><style>.page[hidden]{display:block!important;}</style></noscript>
 </head>
